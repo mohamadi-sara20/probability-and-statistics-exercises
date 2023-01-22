@@ -12,6 +12,12 @@ def calculate_b1_from_origin(x, y):
 def estimate_var(y, y_pred):
     return np.sum(np.power(np.subtract(y, y_pred), 2)) / (len(y) - 1)
 
+def predint(x0, mean_x, b1, t, n, Sxx):
+    y0 = x0 * b1
+    lb = y0 - t * s * math.sqrt(1 + 1/n + (x0-mean_x)/Sxx)
+    up = y0 + t * s * math.sqrt(1 + 1/n + (x0-mean_x)/Sxx)
+    return lb, up
+
 if __name__ == "__main__":
     x = [2,15,30,10,20]   
     y = [7,50,100,40,70 ]
@@ -35,7 +41,6 @@ if __name__ == "__main__":
     lb = b1 - tsig * s / math.sqrt(Sxx)
     up = b1 + tsig * s / math.sqrt(Sxx)
     
-    
     print(f"B Confidence Interval: ({lb}, {up})")
     
     y_pred_up = []
@@ -46,11 +51,13 @@ if __name__ == "__main__":
     for i in range(len(x)):
         y_pred_lb.append(lb * x[i])
         
+    # Problem 11.30
+    
+    pred_lb, pred_up = predint(x0=25, b1=b1, t=tsig,mean_x=mean_x, n=len(x),Sxx=Sxx)
+    print(f"Prediction Interval: ({pred_lb}, {pred_up})")
     
     plt.scatter(x, y)
     plt.plot(x, y_pred_up, color='g')
     plt.plot(x, y_pred, color='r')
     plt.plot(x, y_pred_lb, color='b')
     plt.show()
-    
-    
