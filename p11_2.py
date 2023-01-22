@@ -13,5 +13,3 @@ if __name__ == "__main__":
     # (b)
     pred = b1 * 85 + b0
     print(f"μY|85: {pred}")
-
-    
