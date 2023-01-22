@@ -23,4 +23,3 @@ if __name__ == "__main__":
         print(f"Intercept is greater than 10. Tvalue: {tvalue} ")
     else:
         print(f"Tvalue {tvalue}. Not significant")
-    

@@ -1,4 +1,5 @@
 from p11_1 import *
+from p11_15 import * 
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,3 +20,17 @@ if __name__ == "__main__":
     # (c)
     pred = b1 * 50 + b0
     print(f"μY|50: {pred}")
+    s = calculate_s(y=y, y_pred=y_pred)
+    Sxx = calculate_Sxx(x, mean_x)
+    print(s)
+    # Problem 11. 31 (Test for Linearity) --> H0: B = 0
+    tvalue = b1 * math.sqrt(Sxx) / s
+    df = len(x) - 2
+    print(f"Tvalue: {tvalue}")
+    
+    
+    #
+    
+    
+    
+    
