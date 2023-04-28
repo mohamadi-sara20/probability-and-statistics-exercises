@@ -1,5 +1,5 @@
 import numpy as np
-from p12_1 import calculate_b
+from p12_01 import calculate_b
 
 if __name__ == "__main__":
     y = [0.231, 0.107, 0.053, 0.129, 0.069, 0.030, 1.005, 0.559, 0.321, 2.948, 1.633, 0.934]

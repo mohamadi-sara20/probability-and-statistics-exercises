@@ -1,5 +1,5 @@
 import numpy as np
-from p12_1 import calculate_b
+from p12_01 import calculate_b
 
 def predict(X, b):
     return np.dot(b, X)

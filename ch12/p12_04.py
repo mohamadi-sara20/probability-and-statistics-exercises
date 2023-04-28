@@ -1,6 +1,6 @@
 import numpy as np
-from p12_1 import calculate_b
-from p12_3 import predict
+from p12_01 import calculate_b
+from p12_03 import predict
 
 if __name__ == "__main__":
     y = [95, 77, 80, 100, 97, 70, 50, 80, 92, 84]
