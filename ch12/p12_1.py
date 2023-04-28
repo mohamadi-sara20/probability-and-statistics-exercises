@@ -4,7 +4,7 @@ import numpy as np
 def calculate_b(X, y):
     A = np.dot(X.T, X)
     g = np.dot(X.T, y).reshape(X.shape[1], 1)
-    return np.dot(np.linalg.inv(A), g)
+    return np.squeeze(np.dot(np.linalg.inv(A), g))
 
 
 if __name__ == "__main__":
@@ -14,5 +14,5 @@ if __name__ == "__main__":
     x2 = [1.15, 3.40, 4.10, 8.75, 14.82, 15.15, 15.32, 18.18, 35.19, 40.40]
     X = np.stack((x0, x1, x2), axis=1)
     b = calculate_b(X=X, y=y)
-    print(f"The model: {b[0][0]:.4f} + {b[1][0]:.4f}x1 + {b[2][0]:.4f}x2")
+    print(f"The model: {b[0]:.4f} + {b[1]:.4f}x1 + {b[2]:.4f}x2")
     
