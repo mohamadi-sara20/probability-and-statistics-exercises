@@ -12,4 +12,4 @@ if __name__ == "__main__":
     # a
     print(f"The model: {b[0]:.4f} + {b[1]:.4f}x1 + {b[2]:.4f}x2")
     # b 
-    print(predict(np.array([1, 60, 4]), b))
+    print(predict(np.array([1, 35, 250]), b))
