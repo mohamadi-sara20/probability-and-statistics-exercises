@@ -33,7 +33,7 @@ if __name__ == "__main__":
     x2 = [x**2 for x in x1]
     X = np.stack((x0, x1, x2), axis=1)
     b = calculate_b_multiple_trials(X=X, y=y)
-    print(f"The model: {b[0][1]:.4f} + {b[0][1]:.4f}x1 + {b[0][2]:.4f}x2")
+    print(f"The model: {b[0][0]:.4f} + {b[0][1]:.4f}x1 + {b[0][2]:.4f}x2")
     yhat = np.zeros((y.shape[0], 1),  dtype=np.float64)
     for i in range(y.shape[0]):
         yhat[i][0] = predict(X=X[i], b=b)
