@@ -27,6 +27,14 @@ def compute_lof(y, SSE):
 
 
 if __name__ == "__main__":
+    # So what matters here is how to deal with repeated observations
+    # What to take for the response? sum(yij)/n
+    # How to compute LoF? Divide SSE into two components: (1) LoF (2) Pure SSE
+    # SSE = LoF + Pure SSE & df(SSE) = df(LoF) + df(Pure SSE)
+    # Conduct an F-Test to see if the proportion signifies considerable model misspecification
+    # F-statistics : (LoF / df(LoF)) / (SSE/df(SSE))
+    # See page 420 for the details. 
+
     y = np.array([[25.2,27.3,28.7],[29.8,31.1,27.8],[31.2,32.6,29.7],[31.7,30.1,32.3],[29.4,30.8,32.8]])
     x0 = [1 for i in range(len(y))]
     x1 = [10.0, 15.0, 20.0, 25.0, 30.0]
