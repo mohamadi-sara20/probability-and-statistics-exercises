@@ -1,5 +1,3 @@
-
-
 import numpy as np
 from p12_01 import calculate_b
 
