@@ -31,7 +31,7 @@ if __name__ == "__main__":
     SSR_removed = calculate_SSR(y_hat=y_hat_removed, y=y)
     s = compute_sigma(X=X, y=y, b=b)
     f_val = ((SSR_total - SSR_removed)/2) / s
-
+    print(f_val)
     # H0: B1 = B2 = 0 and H1: Neither of B1 and B2 zero
     # f-stat = R(B1 and B2 | B0, B3, B4) / s = (SSR - R(B0, B3, B4)) / s
 
