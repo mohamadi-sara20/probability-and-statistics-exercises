@@ -19,7 +19,6 @@ def calculate_SST(y):
     return np.sum(np.power(np.subtract(y, y_bar), 2))
 
 
-
 if __name__ == "__main__":
     y = np.array([6.40, 15.05, 18.75, 30.25, 44.85, 48.94, 51.55, 61.50, 100.44, 111.42])
     x0 = [1 for i in range(len(y))]
@@ -38,6 +37,7 @@ if __name__ == "__main__":
     SSR = calculate_SSR(y_hat=y_hat, y=y)
     r2 = calculate_R2(SSR=SSR, SST=SST)
     r2_b = calculate_R2_b(SSE=SSE, SST=SST)
+
 
     print("SST: ", SST)
     print("SSE: ", SSE)
