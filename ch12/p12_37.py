@@ -32,7 +32,7 @@ if __name__ == "__main__":
     s = compute_s(X=X, y=y, b=b)
     f_val = ((SSR_total - SSR_removed)/2) / s
     print(f_val)
-    # H0: B1 = B2 = 0 and H1: Neither of B1 and B2 zero
+    # H0: B1 = B2 = 0 and H1: At least one of B1 and B2 not zero
     # f-stat = R(B1 and B2 | B0, B3, B4) / s = (SSR - R(B0, B3, B4)) / s
 
 
