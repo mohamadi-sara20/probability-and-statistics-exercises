@@ -2,6 +2,7 @@ import numpy as np
 from p12_01 import calculate_b
 from p12_19 import compute_sigma
 from p12_20 import var_covar_matrix
+import scipy
 
 if __name__ == "__main__":
     y = [6.40, 15.05, 18.75, 30.25, 44.85, 48.94, 51.55, 61.50, 100.44, 111.42]
@@ -14,3 +15,5 @@ if __name__ == "__main__":
     A = var_covar_matrix(X=X)
     t_val = (b[1]-2)/(s**0.5 * (A[1][1])**0.5)
     print(f"t-value for B2==0: {t_val}")
+    print("p-val for B2==0", scipy.stats.t.sf(abs(t_val), df=len(y) - 3)*2)
+    

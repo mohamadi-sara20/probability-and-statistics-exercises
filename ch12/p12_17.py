@@ -9,6 +9,7 @@ def compute_sigma(X, b, y):
         yhat.append(predict(X[i], b))
     s = np.sum(np.power((np.array(y) - np.array(yhat)), 2)) / (len(y) - X.shape[1])
     return s
+
 if __name__ == "__main__":
     y = [0.231, 0.107, 0.053, 0.129, 0.069, 0.030, 1.005, 0.559, 0.321, 2.948, 1.633, 0.934]
     x0 = [1 for i in range(len(y))]
