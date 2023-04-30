@@ -28,15 +28,6 @@ if __name__ == "__main__":
     print(f"The model: {b[0]:.4f} + {b[1]:.4f} van + {b[2]:.4f} SUV + {b[3]} Odometer + {b[4]} Octane")
 
     
-    y_hat = np.zeros((y.shape[0], 1),  dtype=np.float64)
-    for i in range(y.shape[0]):
-        y_hat[i][0] = predict(X=X[i], b=b)
-    
-    SSR = calculate_SSR(y=y, y_hat=y_hat)
-    SST = calculate_SST(y=y)
-    r2 = calculate_R2(SSR=SSR, SST=SST)
-
-    
     # which vehicle has better mileage? estimates are close. One way to look at it
     # is to find a CI for each parameter first. 
     # So let's get those. 
