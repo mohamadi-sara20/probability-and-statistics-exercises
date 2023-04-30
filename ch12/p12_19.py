@@ -1,7 +1,7 @@
 import numpy as np
 from p12_01 import calculate_b
 from p12_03 import predict
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 
 
 if __name__ == "__main__":
@@ -13,5 +13,5 @@ if __name__ == "__main__":
     x4 = [100, 95, 110, 88, 94, 99, 97, 96, 110, 105, 100, 98]
     X = np.stack((x0, x1, x2, x3, x4), axis=1)
     b = calculate_b(X=X, y=y)
-    print(compute_sigma(X, b, y))
+    print(compute_s(X, b, y))
     

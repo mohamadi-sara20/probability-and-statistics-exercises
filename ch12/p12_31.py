@@ -1,6 +1,6 @@
 import numpy as np
 from p12_01 import calculate_b
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_03 import predict
 
 
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     x2 = [1.15, 3.40, 4.10, 8.75, 14.82, 15.15, 15.32, 18.18, 35.19, 40.40]
     X = np.stack((x0, x1, x2), axis=1)
     b = calculate_b(X=X, y=y)
-    SSE = compute_sigma(b=b, X=X, y=y)
+    SSE = compute_s(b=b, X=X, y=y)
     SST = calculate_SST(y)
     
 

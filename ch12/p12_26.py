@@ -3,7 +3,7 @@ from p12_03 import predict
 from p12_02 import calculate_b
 from p12_08 import calculate_b_multiple_trials
 from p12_25 import confidence_interval
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_20 import var_covar_matrix
 
 if __name__ == "__main__":
@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     b = calculate_b(X=X, y=y)
     b_mo = calculate_b_multiple_trials(X=X_mo, y=y_mo)
-    s = compute_sigma(X=X, y=y, b=b)
+    s = compute_s(X=X, y=y, b=b)
     A = var_covar_matrix(X=X)
     print(f"The model: {b[0]:.4f} + {b[1]:.4f}x1 + {b[2]:.4f}x2")
     y_hat = predict(X=np.array([1, 19.5, 19.5**2]), b=b)

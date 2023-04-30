@@ -1,7 +1,7 @@
 import numpy as np
 from p12_01 import calculate_b
 from p12_03 import predict
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_25 import confidence_interval
 from p12_20 import var_covar_matrix
 
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     b = calculate_b(X=X, y=y)
 
     y_hat = predict([1, 75, 24, 90, 97], b)
-    s = compute_sigma(X=X, y=y, b=b)
+    s = compute_s(X=X, y=y, b=b)
     A = var_covar_matrix(X=X)
 
     cibound = confidence_interval(s=s, x_in=np.array([1, 75, 24, 90, 97]), A=A, ta=2.364619)

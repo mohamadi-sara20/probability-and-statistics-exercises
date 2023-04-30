@@ -1,7 +1,7 @@
 import numpy as np
 from p12_01 import calculate_b
 from p12_03 import predict
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 
 def var_covar_matrix(X):
     A = np.dot(X.T, X)
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     x2 = [1.10, 0.62, 0.31, 1.10, 0.62, 0.31, 1.10, 0.62, 0.31, 1.10, 0.62, 0.31]
     X = np.stack((x0, x1, x2), axis=1)
     b = calculate_b(X=X, y=y)
-    s = compute_sigma(X=X, y=y, b=b)
+    s = compute_s(X=X, y=y, b=b)
     A_inv = var_covar_matrix(X)
     b1 = A_inv[1][1] * s
     b2 = A_inv[2][2] * s

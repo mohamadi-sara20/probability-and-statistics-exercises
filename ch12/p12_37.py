@@ -1,6 +1,6 @@
 import numpy as np
 from p12_01 import calculate_b
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_03 import predict
 from p12_31 import calculate_SST, calculate_R2, calculate_SSR
 import scipy
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     for i in range(y.shape[0]):
         y_hat_removed[i][0] = predict(X=X_removed[i], b=b_removed)
     SSR_removed = calculate_SSR(y_hat=y_hat_removed, y=y)
-    s = compute_sigma(X=X, y=y, b=b)
+    s = compute_s(X=X, y=y, b=b)
     f_val = ((SSR_total - SSR_removed)/2) / s
     print(f_val)
     # H0: B1 = B2 = 0 and H1: Neither of B1 and B2 zero

@@ -1,6 +1,6 @@
 import numpy as np
 from p12_01 import calculate_b
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_03 import predict
 from p12_31 import calculate_SST, calculate_R2, calculate_SSR
 import scipy

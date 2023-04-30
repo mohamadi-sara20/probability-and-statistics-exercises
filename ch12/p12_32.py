@@ -1,6 +1,6 @@
 import numpy as np
 from p12_01 import calculate_b
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_03 import predict
 from p12_31 import calculate_SST, calculate_R2, calculate_SSR
 import scipy
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         y_hat[i][0] = predict(X=X[i], b=b)
     SSR = calculate_SSR(y_hat=y_hat, y=y)
     r2 = calculate_R2(SSR=SSR, SST=SST)
-    s = compute_sigma(X=X, y=y, b=b)
+    s = compute_s(X=X, y=y, b=b)
     f_val = (SSR/2)/s
     # print(SSR/2)
     # print(s)

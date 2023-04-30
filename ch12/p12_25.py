@@ -1,7 +1,7 @@
 import numpy as np
 from p12_01 import calculate_b
 from p12_03 import predict
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_20 import var_covar_matrix
 
 def confidence_interval(s, ta, x_in, A):
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     x2 = [1.10, 0.62, 0.31, 1.10, 0.62, 0.31, 1.10, 0.62, 0.31, 1.10, 0.62, 0.31]
     X = np.stack((x0, x1, x2), axis=1)
     b = calculate_b(X=X, y=y)
-    s = compute_sigma(X=X, y=y, b=b)
+    s = compute_s(X=X, y=y, b=b)
     # t-value = 2.262156 (two-tailed, df=9)
     cibound = confidence_interval(s=s, ta=2.262156, x_in=np.array([1, 900, 1.00]),A=var_covar_matrix(X=X))
     pibound = prediction_interval(s=s, ta=2.262156, x_in=np.array([1, 900, 1.00]),A=var_covar_matrix(X=X))

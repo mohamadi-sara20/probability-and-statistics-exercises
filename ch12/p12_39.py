@@ -1,7 +1,7 @@
 
 import numpy as np
 from p12_01 import calculate_b
-from p12_17 import compute_sigma
+from p12_17 import compute_s
 from p12_03 import predict
 from p12_31 import calculate_SST, calculate_R2, calculate_SSR
 
@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     print("R2", r2)
 
-    SSE = compute_sigma(b=b, X=X, y=y)
+    SSE = compute_s(b=b, X=X, y=y)
 
     r2_adj = calculate_R2_adj(SSE=SSE, SST=SST, n=y.shape[0])
     print("R2 adjusted: ", r2_adj)

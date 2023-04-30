@@ -3,7 +3,7 @@ from p12_01 import calculate_b
 from p12_03 import predict
 
 
-def compute_sigma(X, b, y):
+def compute_s(X, b, y):
     yhat = []
     for i in range(len(X)):
         yhat.append(predict(X[i], b))
@@ -18,5 +18,5 @@ if __name__ == "__main__":
     X = np.stack((x0, x1, x2), axis=1)
     
     b = calculate_b(X=X, y=y)
-    print(compute_sigma(X, b, y))
+    print(compute_s(X, b, y))
     

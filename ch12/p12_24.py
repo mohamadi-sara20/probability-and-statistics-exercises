@@ -1,6 +1,6 @@
 import numpy as np
 from p12_01 import calculate_b
-from p12_19 import compute_sigma
+from p12_19 import compute_s
 from p12_20 import var_covar_matrix
 import scipy
 
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     x2 = [1.15, 3.40, 4.10, 8.75, 14.82, 15.15, 15.32, 18.18, 35.19, 40.40]
     X = np.stack((x0, x1, x2), axis=1)
     b = calculate_b(X=X, y=y)
-    s = compute_sigma(X=X, y=y, b=b)
+    s = compute_s(X=X, y=y, b=b)
     A = var_covar_matrix(X=X)
     t_val = (b[1]-2)/(s**0.5 * (A[1][1])**0.5)
     print(f"t-value for B2==0: {t_val}")
