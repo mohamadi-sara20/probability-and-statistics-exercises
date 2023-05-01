@@ -1,5 +1,4 @@
 library(MASS)
-library(tidyverse)
 
 y = c(11.2, 14.5, 17.2, 17.8, 19.3, 24.5, 21.2, 16.9, 14.8, 20.0, 13.2, 22.5)
 x1 = c(56.5, 59.5, 69.2, 74.5, 81.2, 88.0, 78.2, 69.0, 58.1, 80.5, 58.3, 84.0)
@@ -12,10 +11,10 @@ step.model <- stepAIC(full.model, direction = "both",
                       trace = FALSE)
 summary(step.model)
 print("============================================================")
-step.model <- stepAIC(full.model, direction = "forward", 
+forward <- stepAIC(full.model, direction = "forward", 
                       trace = FALSE)
-summary(step.model)
+summary(forward)
 print("============================================================")
-step.model <- stepAIC(full.model, direction = "backward", 
+backward <- stepAIC(full.model, direction = "backward", 
                       trace = FALSE)
-summary(step.model)
+summary(backward)
