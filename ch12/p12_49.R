@@ -9,5 +9,5 @@ x4 = c(29.5,26.3,32.2,36.5,27.2,27.7,28.3,30.3,28.7)
 full.model <- lm(y ~ x1 + x2 + x3 + x4)
 print("============================================================")
 backward <- stepAIC(full.model, direction = "backward", 
-                      trace = FALSE, alpha=0.05)
+                      trace = 1, alpha=0.05, )
 summary(backward)
