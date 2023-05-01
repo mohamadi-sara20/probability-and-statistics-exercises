@@ -18,6 +18,10 @@ backward <- stepAIC(full.model, direction = "backward",
 
 print("============================= Stepwise Regression ============================= ")
 summary(step.model)
+print("Prediction is:")
+print(predict(step.model, newdata=list("x1"=NULL, "x2"=180, "x3"=NULL, "x4"=NULL, "x5"=260)))
+print("Prediction Interval:")
+print(predict(step.model, newdata=list("x1"=NULL, "x2"=180, "x3"=NULL, "x4"=NULL, "x5"=260), interval="predict"))
 print("============================= Forward ============================= ")
 summary(forward)
 print("============================= Backward ============================= ")
