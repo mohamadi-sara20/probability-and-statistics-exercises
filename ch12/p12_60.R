@@ -1,3 +1,5 @@
+#TODO: My coefficients differ from the answer key's coefficient in terms of sign. Don't know if it is my mistake or the anwer key's. 
+
 x <- c(0, 30, 60, 75, 90)
 y <- c(0.025, 0.192, 0.312, 0.333, 0.4833)
 log <- glm(y ~ x, family = binomial)
