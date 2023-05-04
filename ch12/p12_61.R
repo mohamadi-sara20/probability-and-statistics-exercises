@@ -2,7 +2,7 @@
 
 x <- c(5, 35, 70, 80, 90)
 y <- c(0.0217, 0.190, 0.315, 0.318, 0.433)
-log <- glm(y ~ x, family = binomial)
+log <- glm(y ~ x, family = binomial())
 summary(log)
 
 

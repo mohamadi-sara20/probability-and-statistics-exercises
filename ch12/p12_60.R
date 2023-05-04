@@ -2,7 +2,7 @@
 
 x <- c(0, 30, 60, 75, 90)
 y <- c(0.025, 0.192, 0.312, 0.333, 0.4833)
-log <- glm(y ~ x, family = binomial)
+log <- glm(y ~ x, family = binomial())
 summary(log)
 
 
@@ -22,3 +22,14 @@ print("================== ED50 Estimation ==================")
 # Effective Dose with a 0.5 prob needs to weigh:
 
 print(2.69893 / 0.02931)
+
+
+
+
+# Book Ex
+# x <- c(0.10 ,0.15, 0.20, 0.30, 0.50, 0.70 ,0.95)
+# counts <- c(47, 53, 55, 52, 46, 54, 52)
+# # y <- c(8, 14, 24, 32, 38, 50, 50)
+# p <- c(0.17, 0.264, 0.436, 0.615, 0.826, 0.926, 0.962)
+# y <- glm(p  ~  x , family =  binomial())
+# summary(y)
