@@ -6,19 +6,12 @@ def calculate_bartlett(X):
     varX = np.ones((X.shape[0], 1))
     nis = np.ones((X.shape[0], 1))
     for i in range(len(X)):
-        varX[i][0] = np.var(X[i])
+        varX[i][0] = np.var(X[i], ddof=1)
         nis[i][0] = len(X[i]) - 1
-    sp = np.sum(np.dot(nis.T, varX)) / (np.sum(nis) - len(X))
-    bval_n = 1
-    for v in varX:
-        bval_n *= varX[i][0] ** nis[i][0]
-    power = 1/(np.sum(nis) - len(X))
-    bval_n = bval_n**power
-    return bval_n / sp
+    sp = np.sum(varX) / len(X)
+    return np.prod(varX)**(1/len(X)) / sp
 
     
-
-
 if __name__ == "__main__":
     c50 = np.array([13.2,12.4,12.8,17.2,13.0,14.0,14.2,21.6,15.0,20.0])
     c100 = np.array([16.0,12.6,14.8,13.0,14.0,23.6,14.0,17.0,22.2,24.4])
