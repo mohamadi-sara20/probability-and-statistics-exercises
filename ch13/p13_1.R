@@ -9,3 +9,5 @@ data <- data.frame(
 
 anv <- aov(tensile ~ as.factor(machine), data = data)
 summary(anv)
+
+
