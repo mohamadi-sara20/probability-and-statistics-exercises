@@ -14,5 +14,5 @@ data <- data.frame(
 
 data$sampling_method <- as.factor(data$sampling_method)
 model <- aov(y ~ sampling_method, data = data)
-summary(anv)
-TukeyHSD(model, which = 'sampling_method')
+summary(model)
+TukeyHSD(model, which = 'sampling_method') 
