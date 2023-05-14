@@ -13,12 +13,6 @@ if __name__ == "__main__":
     E =np.array([7.1, 6.6, 9.3, 4.2, 7.6])
     X = np.array([A, B, C, D, E], dtype=object)
                    
-    A_m = np.mean(A)
-    B_m = np.mean(B)
-    C_m = np.mean(C)
-    D_m = np.mean(D)
-    E_m = np.mean(E)
-
     SSA, nis, treatment_means = calculate_SSA_unequal(X)
     SSE = calculate_SSE(X, treatment_means)
     s = SSE/ (X.shape[0] * (A.shape[0]-1))
@@ -50,6 +44,8 @@ if __name__ == "__main__":
     print("DE: ", DE)
     
     tuk_val=Tukey_critical_value(s=s, tuk_val=4.24, n=A.shape[0])
+
+    #TODO: Tukey needs an ordered list of means. This should be corrected. 
 
     
 
