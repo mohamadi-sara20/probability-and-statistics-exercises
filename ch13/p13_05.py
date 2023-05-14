@@ -1,5 +1,5 @@
 import numpy as np
-from p13_1 import is_significant
+from p13_01 import is_significant
 
 def calculate_SSA_unequal(data):
     treatment_means = np.zeros((data.shape[0], 1))

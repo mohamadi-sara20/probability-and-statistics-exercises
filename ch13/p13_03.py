@@ -1,5 +1,5 @@
 import numpy as np
-from p13_1 import anova, is_significant
+from p13_01 import anova, is_significant
 
 if __name__ == "__main__":
     X = np.array([[77,88,85],

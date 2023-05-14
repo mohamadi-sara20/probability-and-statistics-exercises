@@ -1,6 +1,6 @@
 import numpy as np
-from p13_1 import is_significant, anova
-from p13_5 import anova_unequqal
+from p13_01 import is_significant, anova
+from p13_05 import anova_unequqal
 
 
 if __name__ == "__main__":

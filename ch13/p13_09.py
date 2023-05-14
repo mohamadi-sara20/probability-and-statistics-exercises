@@ -1,6 +1,6 @@
 import numpy as np
-from p13_1 import is_significant
-from p13_8 import anova_unequqal
+from p13_01 import is_significant
+from p13_08 import anova_unequqal
 
 
 def calculate_bartlett_unequal(X):

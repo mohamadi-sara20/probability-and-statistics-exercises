@@ -1,7 +1,5 @@
 import numpy as np
-from p13_1 import is_significant
-from p13_5 import anova_unequqal
-from p13_9 import calculate_bartlett_unequal
+from p13_09 import calculate_bartlett_unequal
 
 if __name__ == "__main__":
     aromatics = np.array([1.06,0.95,0.79,0.65,0.82,1.15,0.89,1.12, 1.05])
