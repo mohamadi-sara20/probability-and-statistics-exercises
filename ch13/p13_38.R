@@ -18,3 +18,6 @@ data$blocks = as.factor(data$blocks)
 
 model <- aov(yield ~ conds + blocks, data = data)
 summary(model)
+
+# Finding  (S1-S) / n also shows the variance differs from zero, 
+# hence approving anvoa results. 
