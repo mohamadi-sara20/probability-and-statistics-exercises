@@ -22,6 +22,6 @@ yield  <- c(
             )
 
 data <- data.frame(oven, temp, yield)
-
+data$temp <- as.factor(data$temp)
 model <- aov(yield ~ oven * temp, data = data)
 summary(model)
