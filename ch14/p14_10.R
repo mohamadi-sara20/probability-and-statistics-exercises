@@ -21,3 +21,5 @@ yield  <- c(c(15.5, 14.8, 21.3),
 data <- data.frame(dose, position, yield)
 model <- aov(yield ~ dose + position, data = data)
 summary(model)
+
+TukeyHSD(model, which = 'position') 
