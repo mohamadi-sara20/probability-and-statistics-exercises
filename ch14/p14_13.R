@@ -25,3 +25,6 @@ interaction.plot(x.factor = data$treatment,
 data$treatment <- factor(data$treatment)
 lmodel <- lm(yield ~ treatment * time, data=data)
 summary(lmodel)
+
+
+
