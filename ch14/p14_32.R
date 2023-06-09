@@ -1,6 +1,7 @@
 library(partR2)
 library(lme4)
 library(lmerTest)
+library(ggplot2)
 
 cereal     <- rep(c("1", "1", "2", "2", "3", "3"), n=6)
 power <-  rep(c("Low", "Current", "High"), each=12)
@@ -27,3 +28,7 @@ anova(m)
 #                  trace.factor = data$cereal,
 #                  response = data$yield)
 
+ggplot(data=data) +
+  aes(x = power, color = cereal, group = cereal, y = yield) +
+  stat_summary(fun = mean, geom = "point") +
+  stat_summary(fun = mean, geom = "line")
