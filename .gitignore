@@ -1,2 +1,4 @@
 *.pyc
 .Rproj.user
+notes/
+.DS_Store
