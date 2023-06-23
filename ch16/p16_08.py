@@ -27,7 +27,7 @@ def wilxoc_test(A, mu, direction='two.sided'):
             ranks[ds[i]] = abs_ranks[abs(ds[i])]
     for k in ranks:
         if freq[abs(k)] > 1:
-            ranks[k] = ranks[abs(k)] / freq[abs(k)]
+            ranks[k] = ranks[k] / freq[abs(k)]
         
 
     wp = 0
