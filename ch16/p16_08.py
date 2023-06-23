@@ -1,14 +1,19 @@
 import numpy as np
+import collections
+
 
 def wilxoc_test(A, mu, direction='two.sided'):
     ds = np.subtract(A, mu)
     ds.sort()
+    ds_freq = collections.Counter(ds)
+
     abs_ds = np.abs(ds)
     abs_sort = np.sort(abs_ds)
     abs_sort = abs_sort[abs_sort != 0]
     abs_ranks = dict({})
     freq = dict({})
-    for i in range(len(abs_sort)):
+
+    for i in range(len(abs_sort)): 
         if abs_sort[i] in abs_ranks:
             freq[abs_sort[i]] += 1
             abs_ranks[abs_sort[i]] += i+1
@@ -23,14 +28,15 @@ def wilxoc_test(A, mu, direction='two.sided'):
     for k in ranks:
         if freq[abs(k)] > 1:
             ranks[k] = ranks[abs(k)] / freq[abs(k)]
+        
 
     wp = 0
     wn = 0
     for i in ranks:
         if i > 0:
-            wp += ranks[i]
+            wp += ds_freq[i] * ranks[i]
         else:
-            wn += ranks[i]
+            wn += ranks[i] * ds_freq[i]
 
     if direction == 'greater':
         # -
