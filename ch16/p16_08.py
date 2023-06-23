@@ -38,10 +38,10 @@ def wilxoc_test(A, mu, direction='two.sided'):
         else:
             wn += ranks[i] * ds_freq[i]
 
-    if direction == 'greater':
+    if direction == 'less':
         # -
         return wn
-    elif direction == 'less':
+    elif direction == 'greater':
         # +
         return wp
     elif direction == 'two.sided':
